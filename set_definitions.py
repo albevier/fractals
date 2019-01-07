@@ -1,4 +1,7 @@
 import numpy as np
-
-def mandelbrot(z, c, n, iterations, threshold) 
-	result = 0
+import scipy
+import matplotlib.pyplot
+'''creating mandelbrot set object'''
+class mandelbrot(object):
+	def __init__(self): #
+		self.iter = iterations
