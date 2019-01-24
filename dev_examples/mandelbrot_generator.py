@@ -38,23 +38,23 @@ def mandel_set(rcmin,rcmax,icmin,icmax,rstep,istep):
 
 def make_img(rcmin,rcmax,icmin,icmax):
 	#define grid size, in pixels per inch
-	imwidth,imheight=512,384 #inches values
-	ppi=100
+	imwidth,imheight=1000,1000 #inches values
+	ppi=1000
 	width = imwidth/ppi
 	height = imheight/ppi
 	#get values
-	Re_c,Im_c,itr=mandel_set(rcmin,rcmax,icmin,icmax,imwidth,imheight)
+	Re_c,Im_c,itr=self.mandel_set(rcmin,rcmax,icmin,icmax,imwidth,imheight)
 	#make plot. figsize takes dimensions in integer inches
 	fig,ax=plt.subplots(figsize=(width, height),dpi=ppi) 
 	ax.set_title('Mandelbrot')
 	#apply the colormap, i transposed to reorient the picture
-	ax.imshow(itr.T,cmap='hot')
+	ax.imshow(itr.T,cmap='RdPu')
 	plt.show()
 
 if __name__=='__main__':
 
 	#I make the mandelbrot image zoomed into an experimental region ... spirally
-	make_img(-0.75,-.747,.063,.066)
+	make_img(-1,0,-0.5,0.5)
 
 
 
